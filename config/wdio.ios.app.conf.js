@@ -1,9 +1,5 @@
 const { config } = require('./wdio.shared.conf');
 config.cucumberOpts.tagExpression = `${config.cucumberOpts.tagExpression} and not @android`;
-
-// ============
-// Capabilities
-// ============
 config.capabilities = [
 
   {
