@@ -4,9 +4,9 @@ Feature: Home Screen
     Given launch the app
     When i am in the home screen
     Then i should see a the text <text>
-    
+
     Examples:
-      | text |
+      | text                                |
       | Demo app for the appium-boilerplate |
-      | Support |
-      | WEBDRIVER | 
+      | Support                             |
+      | WEBDRIVER                           |
