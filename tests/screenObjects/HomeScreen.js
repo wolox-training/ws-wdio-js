@@ -13,8 +13,7 @@ const SELECTORS = {
     ? '-android uiautomator: new UiSelector().description("Home-screen")'
     // accessibility:
     : '~Home-screen',
-  TEXT: driver.isAndroid
-    ? '-android uiautomator: new UiSelector().text("{TEXT}")'
+  TEXT: driver.isAndroid? '-android uiautomator: new UiSelector().text("{TEXT}")'
     // xPath
     : '//XCUIElementTypeStaticText[@name="{TEXT}"]'
 };
@@ -23,7 +22,6 @@ class HomeScreen extends AppScreen {
   constructor() {
     super(SELECTORS.HOME_SCREEN);
   }
-
   /*
     This way, you can make a flexible selector that depends on a variable value and it also works for
     both techs

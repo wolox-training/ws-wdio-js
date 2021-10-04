@@ -1,5 +1,5 @@
 import { Given, When, Then } from 'cucumber';
-import HomeScreen from '../screenObjects/HomeScreen.js';
+import HomeScreen from '../screenObjects/HomeScreen';
 
 Given(/^launch the app$/, () => {
   driver.launchApp();
