@@ -1,12 +1,6 @@
 const { config } = require('./wdio.shared.conf');
 
 config.cucumberOpts.tagExpression = `${config.cucumberOpts.tagExpression} and not @ios`;
-// ============
-// Capabilities
-// ============
-// For all capabilities please check
-// http://appium.io/docs/en/writing-running-appium/caps/#general-capabilities
-
 config.capabilities = [
   {
     platformName: 'Android',

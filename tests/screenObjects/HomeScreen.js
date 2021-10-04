@@ -1,4 +1,4 @@
-import AppScreen from './app.screen';
+import AppScreen from './AppScreen';
 
 /*
   SELECTORS: This object is present in every class screen. Each value represents an object or action
