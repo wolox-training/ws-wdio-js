@@ -3,8 +3,7 @@ import LoginScreen from '../screenObjects/LoginScreen';
 var Fakerator = require("fakerator");
 var fakerator = Fakerator("es-ES");
 
-Given(/^I am in the signup session/, () => {
-  driver.launchApp();
+Given(/^I am in the signup screen/, () => {
   LoginScreen.waitForIsShown();
   LoginScreen.tabSignUp();
 });

@@ -1,20 +1,12 @@
 import AppScreen from './AppScreen';
 
-/*
-  SELECTORS: This object is present in every class screen. Each value represents an object or action
-  to be executed in the device. There should be one getter for each key, except it is only used inside
-  the class. Each tech has it`s selector methods.
-  Most common are:
-  Android: xPath, accessibility, uiautomator.
-  iOS: xPath, accessibility, predicate string.
-*/
+
 const SELECTORS = {
   HOME_SCREEN: driver.isAndroid
     ? '-android uiautomator: new UiSelector().description("Home-screen")'
-    // accessibility:
     : '~Home-screen',
-  TEXT: driver.isAndroid? '-android uiautomator: new UiSelector().text("{TEXT}")'
-    // xPath
+  TEXT: driver.isAndroid
+    ? '-android uiautomator: new UiSelector().text("{TEXT}")'
     : '//XCUIElementTypeStaticText[@name="{TEXT}"]'
 };
 

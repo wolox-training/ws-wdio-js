@@ -1,12 +1,12 @@
 Feature: Sign up in the app
 
-  Scenario: Sign Up user successfully
-    Given I am in the signup session
+  Scenario: Sign up user successfully
+    Given I am in the signup screen
     When I send the form with the correct data
     Then I verify that the text You successfully signed up! is displayed on the screen
 
-  Scenario Outline: Sign Up user with incorrect data
-    Given I am in the signup session
+  Scenario Outline: Sign up user with incorrect data
+    Given I am in the signup screen
     When I send the form with the incorrect data <email> and <password>
     Then I verify that the text <message> is displayed on the screen
     Examples:
