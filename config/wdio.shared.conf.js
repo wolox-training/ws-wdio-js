@@ -1,4 +1,5 @@
 require('dotenv').config();
+const hooks = require('../hooks');
 
 exports.config = {
    runner: 'local',
@@ -53,5 +54,7 @@ exports.config = {
       // <boolean> Enable this config to treat undefined definitions as warnings.
       ignoreUndefinedDefinitions: false,
    },
-   sync: true
+   sync: true,
+   ...hooks
 };
+ 

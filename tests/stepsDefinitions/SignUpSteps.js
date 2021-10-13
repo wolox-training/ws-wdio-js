@@ -16,8 +16,10 @@ When(/^I send the form with the correct data/, () => {
 Then(/^I verify that the text (.*) is displayed on the screen/, text => {
   const textElement = LoginScreen.getTextSuccess(text);
   expect(textElement.isDisplayed()).toBe(true);
+ 
 });
 
 When(/^I send the form with the incorrect data (.*) and (.*)/, (email, password) => {
   LoginScreen.completeTheForm(email, password);
+  
 });
