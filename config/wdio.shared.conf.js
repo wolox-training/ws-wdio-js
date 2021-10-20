@@ -55,6 +55,10 @@ exports.config = {
       ignoreUndefinedDefinitions: false,
    },
    sync: true,
-   ...hooks
+   ...hooks,
+    reporters: [['allure', {
+      outputDir: 'allure-results',
+      disableWebdriverStepsReporting: false,
+      disableWebdriverScreenshotsReporting: false,
+   }]]
 };
- 

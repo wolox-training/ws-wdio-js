@@ -4,5 +4,8 @@ module.exports = {
     },
     afterScenario: function () {
         driver.reset();
+    },
+    afterStep: function () {
+        driver.takeScreenshot();
     }
 }

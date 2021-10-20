@@ -11,6 +11,7 @@
     "ios.app": "./node_modules/.bin/wdio ./config/wdio.ios.app.conf.js",
     "lint-diff": "git diff --name-only --cached --relative | grep \\\\.js$ | xargs eslint",
     "precommit": "npm run lint-diff"
+    
   },
   "repository": {
     "type": "git",
@@ -29,15 +30,16 @@
     "@babel/register": "^7.9.0",
     "@babel/traverse": "^7.9.5",
     "@babel/types": "^7.9.5",
-    "babel-eslint": "^10.1.0",
-    "webdriverio": "^6.0.13",
+    "@wdio/allure-reporter": "^7.14.1",
     "@wdio/appium-service": "^6.4.0",
     "@wdio/cli": "^6.4.0",
     "@wdio/cucumber-framework": "^6.4.0",
     "@wdio/local-runner": "^6.4.0",
     "@wdio/spec-reporter": "^6.4.0",
     "@wdio/sync": "^6.4.0",
+    "allure-commandline": "^2.13.8",
     "appium": "^1.18.0",
+    "babel-eslint": "^10.1.0",
     "dotenv": "^8.2.0",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.11.0",
@@ -48,9 +50,10 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
     "eslint-plugin-wdio": "^6.0.12",
+    "fakerator": "^0.3.4",
     "husky": "^0.14.3",
     "prettier": "^2.0.5",
     "prettier-eslint": "^11.0.0",
-    "fakerator": "^0.3.4"
+    "webdriverio": "^6.0.13"
   }
 }
