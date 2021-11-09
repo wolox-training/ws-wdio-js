@@ -36,6 +36,12 @@ const SELECTORS = {
   BTN_ACTIVE: driver.isAndroid
     ? '-android uiautomator: .description("button-Active")'
     : '//XCUIElementTypeOther[@name = "button-Active"]',
+  BTN_INACTIVE: driver.isAndroid
+    ? '-android uiautomator: .description("button-Inactive")'
+    : '//XCUIElementTypeOther[@name = "button-Inactive"]',
+  BUTTONS_ACTIVE: driver.isAndroid
+    ? '-android uiautomator: .className("android.widget.Button").text("{TEXT}")'
+    : '//XCUIElementTypeOther[@name = "select-Dropdown"]',
 };
 
 class FormsScreen extends AppScreen {
@@ -60,7 +66,7 @@ class FormsScreen extends AppScreen {
     return $(SELECTORS.SWITCH_TEXT);
   }
   selectDropdown(dropdownValue) {
-    $(SELECTORS.SCROLL_BTN_ACTIVE)
+    $(SELECTORS.SCROLL_BTN_ACTIVE);
     $(SELECTORS.DROPDOWN).click();
     $(SELECTORS.DROPDOWN_VALUE.replace(/{TEXT}/, dropdownValue)).click();
   }
@@ -68,9 +74,17 @@ class FormsScreen extends AppScreen {
     return $(SELECTORS.DROPDOWN_RESULT.replace(/{TEXT}/, dropdownValue));
   }
   clickButtonActive() {
-    $(SELECTORS.SCROLL_BTN_ACTIVE)
+    $(SELECTORS.SCROLL_BTN_ACTIVE);
     $(SELECTORS.BTN_ACTIVE).click();
   }
+  getButtonInactive() {
+    $(SELECTORS.SCROLL_BTN_ACTIVE);
+    return $(SELECTORS.BTN_INACTIVE);
+  }
+  getTextButtonsActive(btnValue) {
+    return $(SELECTORS.BUTTONS_ACTIVE.replace(/{TEXT}/, btnValue))
+  }
+
 
 }
 

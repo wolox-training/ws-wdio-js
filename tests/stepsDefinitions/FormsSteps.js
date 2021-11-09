@@ -7,6 +7,7 @@ var textInputValidate;
 Given(/^I am in the forms screen/, () => {
     FormsScreen.waitForIsShown();
     FormsScreen.tabForms();
+    expect(FormsScreen.getButtonInactive().isEnabled()).toBe(false); 
 });
 
 When(/^I enter the text (.*) in the input field/, text => {
@@ -35,10 +36,13 @@ Then(/^I check that the text (.*) is displayed in the field/, dropdownValue => {
     expect(FormsScreen.getTextDropdown(dropdownValue).isDisplayed()).toBe(true);
 });
 When(/^I click the button/, () => {
-FormsScreen.clickButtonActive();
+    FormsScreen.clickButtonActive();
+    
 });
 
-Then(/^display the buttons (.*), (.*) and (.*)/, (btnAskMeLater, btnCancel, btnOk) => {
-
+Then(/^display the buttons "(.*)", "(.*)" and "(.*)"/, (btnAskMeLater, btnCancel, btnOk) => {
+    expect(FormsScreen.getTextButtonsActive(btnAskMeLater).isDisplayed()).toBe(true);
+    expect(FormsScreen.getTextButtonsActive(btnCancel).isDisplayed()).toBe(true);
+    expect(FormsScreen.getTextButtonsActive(btnOk).isDisplayed()).toBe(true);
 });
 
