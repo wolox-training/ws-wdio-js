@@ -11,6 +11,14 @@ Feature: Validate forms screen
     When I select the switch
     Then I validate that the switch is Click to turn the switch OFF
 
+  Scenario: Validate the Button Active
+    Given I am in the forms screen
+    When I click the Active button
+    Then the following buttons are displayed on the form screen
+      | Ask me later |
+      | Cancel       |
+      | OK           |
+
   Scenario Outline: Validate the Dropdown form field
     Given I am in the forms screen
     When I select the option <dropdownValue>
@@ -20,8 +28,3 @@ Feature: Validate forms screen
       | Appium is awesome       |
       | This app is awesome     |
       | webdriver.io is awesome |
-
-  Scenario: Validate the Button Active
-    Given I am in the forms screen
-    When I click the button
-    Then display the buttons "ASK ME LATER", "CANCEL" and "OK"

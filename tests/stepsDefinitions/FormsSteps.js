@@ -1,13 +1,13 @@
 
 import { Given, When, Then, } from 'cucumber';
 import FormsScreen from '../screenObjects/FormsScreen';
-
+const assert = require('assert')
 var textInputValidate;
 
 Given(/^I am in the forms screen/, () => {
     FormsScreen.waitForIsShown();
     FormsScreen.tabForms();
-    expect(FormsScreen.getButtonInactive().isEnabled()).toBe(false); 
+    expect(FormsScreen.getButtonInactive().isEnabled()).toBe(false);
 });
 
 When(/^I enter the text (.*) in the input field/, text => {
@@ -35,14 +35,19 @@ When(/^I select the option (.*)/, dropdownValue => {
 Then(/^I check that the text (.*) is displayed in the field/, dropdownValue => {
     expect(FormsScreen.getTextDropdown(dropdownValue).isDisplayed()).toBe(true);
 });
-When(/^I click the button/, () => {
+When(/^I click the Active button/, () => {
     FormsScreen.clickButtonActive();
-    
-});
 
-Then(/^display the buttons "(.*)", "(.*)" and "(.*)"/, (btnAskMeLater, btnCancel, btnOk) => {
-    expect(FormsScreen.getTextButtonsActive(btnAskMeLater).isDisplayed()).toBe(true);
-    expect(FormsScreen.getTextButtonsActive(btnCancel).isDisplayed()).toBe(true);
-    expect(FormsScreen.getTextButtonsActive(btnOk).isDisplayed()).toBe(true);
 });
-
+Then(/^the following buttons are displayed on the form screen/, data => {
+    if (driver.isAndroid) {
+        data.raw().forEach((item) => {
+            expect(FormsScreen.getTextButtonAndroid(item[0]).isDisplayed()).toBe(true);
+        });
+    } else {
+        var list = FormsScreen.getTextButtonIos();
+        data.raw().forEach((item, index) => {
+            assert.equal(list[index], item[0])
+        });
+    }
+});
