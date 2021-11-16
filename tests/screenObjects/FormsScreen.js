@@ -41,7 +41,7 @@ const SELECTORS = {
     : '//XCUIElementTypeOther[@name="Active"]',
   BTN_INACTIVE: driver.isAndroid
     ? '-android uiautomator: .description("button-Inactive")'
-    : '//XCUIElementTypeStaticText[@name="Inactive"]',
+    : '//XCUIElementTypeStaticText[@name="Inactive"]'
 };
 
 class FormsScreen extends AppScreen {
@@ -71,7 +71,7 @@ class FormsScreen extends AppScreen {
     if (driver.isAndroid) {
       $(SELECTORS.DROPDOWN_VALUE.replace(/{TEXT}/, dropdownValue)).click();
     } else {
-      for (const i = 0; index < 2; i++) {
+      for (const i = 0; index <= 2; i++) {
         if ($(PICKER_IOS.replace(/{TEXT}/, dropdownValue)).isDisplayed()) {
           $(BTN_DONE_IOS).click();
           break;
