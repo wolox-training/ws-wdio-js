@@ -1,5 +1,3 @@
-import { configs } from 'eslint-plugin-prettier';
-import constants from '../../config/constants';
 import AppScreen from './AppScreen';
 
 const BUTTONS_ACTIVE = '-android uiautomator: .className("android.widget.Button").text("{TEXT}")';
@@ -49,7 +47,7 @@ class FormsScreen extends AppScreen {
     super(SELECTORS.FORMS);
   }
 
-  tabForms() {
+  goToTheFormsTab() {
     $(SELECTORS.FORMS).click();
     $(SELECTORS.FORMS_SCREEN).waitForDisplayed();
   }

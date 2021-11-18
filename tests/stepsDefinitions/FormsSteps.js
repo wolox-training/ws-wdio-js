@@ -1,25 +1,24 @@
 
 import { Given, When, Then, } from 'cucumber';
 import FormsScreen from '../screenObjects/FormsScreen';
-const assert = require('assert')
-var textInputValidate;
+import assert from 'assert';
+
 
 Given(/^I am in the forms screen/, () => {
     FormsScreen.waitForIsShown();
-    FormsScreen.tabForms();
+    FormsScreen.goToTheFormsTab();
     expect(FormsScreen.getButtonInactive().isEnabled()).toBe(false);
 });
 
-When(/^I enter the text (.*) in the input field/, text => {
-    textInputValidate = text;
+When(/^I enter the text "(.*)" in the input field/, textInputValidate => {
     FormsScreen.setValueInput(textInputValidate);
 });
 
-Then(/^I verify that the text is displayed in the following field/, () => {
+Then(/^I verify that the text "(.*)" is displayed in the following field/, textInputValidate => {
     expect(FormsScreen.getTextInput()).toHaveText(textInputValidate);
 });
 
-When(/^I select the switch/, () => {
+When(/^I select the OFF value/, () => {
     FormsScreen.selectSwitch();
 });
 

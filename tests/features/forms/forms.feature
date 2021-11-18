@@ -2,13 +2,13 @@ Feature: Validate forms screen
 
   Scenario: Validate the Input form field
     Given I am in the forms screen
-    When I enter the text prueba in the input field
-    Then I verify that the text is displayed in the following field
+    When I enter the text "test" in the input field
+    Then I verify that the text "test" is displayed in the following field
 
   Scenario: Validate the Switch form field
     Given I am in the forms screen
     And I validate that the switch is Click to turn the switch ON
-    When I select the switch
+    When I select the OFF value
     Then I validate that the switch is Click to turn the switch OFF
 
   Scenario: Validate the Button Active
