@@ -5,6 +5,9 @@ Feature: Swipe on the carousel
         When I search for an item with the name <itemName>
         Then I verify that the text <itemName> is displayed in the carousel
         Examples:
-            | itemName   |
-            | EXTENDABLE |
+            | itemName          |
+            | FULLY OPEN SOURCE |
+            | CREAT COMMUNITY   |
+            | JS.FOUNDATION     |
+            | SUPPORT VIDEOS    |
 
