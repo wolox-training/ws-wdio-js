@@ -1,6 +1,5 @@
 import AppScreen from './AppScreen';
 
-
 const SELECTORS = {
   LOGIN: driver.isAndroid
     ? '-android uiautomator: .description("Login")'
@@ -42,6 +41,19 @@ class LoginScreen extends AppScreen {
     $(SELECTORS.BUTTON_SIGN_UP).click();
     $(SELECTORS.LOGIN_SCREEN).waitForDisplayed();
   }
+  tabLogin() {
+    $(SELECTORS.LOGIN).click();
+    $(SELECTORS.LOGIN_SCREEN).waitForDisplayed();
+  }
+  login(email, password) {
+    console.log(email);
+    console.log(password);
+    $(SELECTORS.EMAIL).setValue(email);
+    $(SELECTORS.PASSWORD).setValue(password);
+    $(SELECTORS.BUTTON_LOGIN).click();
+    
+  }
+
   completeTheForm(email, password) {
     $(SELECTORS.EMAIL).setValue(email);
     $(SELECTORS.PASSWORD).setValue(password);
