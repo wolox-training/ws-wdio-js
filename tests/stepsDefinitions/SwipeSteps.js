@@ -7,8 +7,7 @@ Given(/^I am in the swipe screen/, () => {
 });
 
 When(/^I search for an item with the name (.*)/, itemName => {
-    SwipeScreen.searchTheItem(itemName)
-    
+    SwipeScreen.searchTheItem(itemName);   
 });
 
 Then(/^I verify that the text (.*) is displayed in the carousel/, itemName => {
