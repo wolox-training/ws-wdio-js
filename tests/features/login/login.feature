@@ -1,12 +1,12 @@
 Feature: Login to the application
 
     Scenario: login with a user successfully
-        Given I am in the login screen
+        Given I am in the Login screen
         When I login with the user data "firstUser"
         Then I verify that the text You are logged in! is displayed on the screen
 
     Scenario Outline: Login with incorrect data
-        Given I am in the login screen
+        Given I am in the Login screen
         When I login with the incorrect data <email> and <password>
         Then I verify that the text <message> is displayed on the screen
         Examples:

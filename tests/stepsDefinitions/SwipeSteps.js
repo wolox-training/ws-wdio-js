@@ -1,10 +1,6 @@
 import { Given, When,Then} from 'cucumber';
 import SwipeScreen from '../screenObjects/SwipeScreen';
 
-Given(/^I am in the swipe screen/, () => {
-    SwipeScreen.waitForIsShown();
-    SwipeScreen.goToTheSwipeTab();
-});
 
 When(/^I search for an item with the name (.*)/, itemName => {
     SwipeScreen.searchTheItem(itemName);   
