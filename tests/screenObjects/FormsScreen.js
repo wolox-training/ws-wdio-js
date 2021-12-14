@@ -4,12 +4,6 @@ const BUTTONS_ACTIVE = '-android uiautomator: .className("android.widget.Button"
 const PICKER_IOS = '//XCUIElementTypePickerWheel[@value ="{TEXT}"]';
 const BTN_DONE_IOS = '//XCUIElementTypeOther[@name="Done"]';
 const SELECTORS = {
-  FORMS: driver.isAndroid
-    ? '-android uiautomator: .description("Forms")'
-    : '//XCUIElementTypeOther[@name = "Forms"]',
-  FORMS_SCREEN: driver.isAndroid
-    ? '-android uiautomator: .description("Forms-screen")'
-    : '//XCUIElementTypeOther[@name = "Input field Type something"]',
   TEXT_INPUT: driver.isAndroid
     ? '-android uiautomator: .description("text-input")'
     : '//XCUIElementTypeTextField[@name = "text-input"]',
@@ -44,12 +38,7 @@ const SELECTORS = {
 
 class FormsScreen extends AppScreen {
   constructor() {
-    super(SELECTORS.FORMS);
-  }
-
-  goToTheFormsTab() {
-    $(SELECTORS.FORMS).click();
-    $(SELECTORS.FORMS_SCREEN).waitForDisplayed();
+    super(SELECTORS.TEXT_INPUT);
   }
   setValueInput(text) {
     $(SELECTORS.TEXT_INPUT).setValue(text);

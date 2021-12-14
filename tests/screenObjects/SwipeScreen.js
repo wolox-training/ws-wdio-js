@@ -4,12 +4,6 @@ const SWIPE_ITEM_IOS = '//XCUIElementTypeStaticText[@name="{TEXT}"]';
 const DIRECT_ACCESS_BAR = 'type == "XCUIElementTypeScrollView"';
 
 const SELECTORS = {
-  SWIPE_SCREEN: driver.isAndroid
-    ? '-android uiautomator: .description("Swipe-screen")'
-    : '//XCUIElementTypeOther[@name = "Swipe-screen"]',
-  SWIPE: driver.isAndroid
-    ? '-android uiautomator: .description("Swipe")'
-    : '//XCUIElementTypeOther[@name = "Swipe"]',
   SWIPE_ITEM: driver.isAndroid
     ? '-android uiautomator: new UiScrollable( .scrollable(true)).setAsHorizontalList().scrollIntoView( .text("{TEXT}"))'
     : '//XCUIElementTypeOther[@name = "button-sign-up-container"]',
@@ -20,12 +14,7 @@ const SELECTORS = {
 
 class SwipeScreen extends AppScreen {
   constructor() {
-    super(SELECTORS.SWIPE);
-  }
-
-  goToTheSwipeTab() {
-    $(SELECTORS.SWIPE).click();
-    $(SELECTORS.SWIPE_SCREEN).waitForDisplayed();
+    super(SELECTORS.SWIPE_ITEM);
   }
 
   searchTheItem(itemName) {

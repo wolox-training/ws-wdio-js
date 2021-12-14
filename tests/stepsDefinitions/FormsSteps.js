@@ -1,16 +1,11 @@
 
-import { Given, When, Then, } from 'cucumber';
+import {When, Then, } from 'cucumber';
 import FormsScreen from '../screenObjects/FormsScreen';
 import assert from 'assert';
 
 
-Given(/^I am in the forms screen/, () => {
-    FormsScreen.waitForIsShown();
-    FormsScreen.goToTheFormsTab();
-    expect(FormsScreen.getButtonInactive().isEnabled()).toBe(false);
-});
-
 When(/^I enter the text "(.*)" in the input field/, textInputValidate => {
+    expect(FormsScreen.getButtonInactive().isEnabled()).toBe(false);
     FormsScreen.setValueInput(textInputValidate);
 });
 

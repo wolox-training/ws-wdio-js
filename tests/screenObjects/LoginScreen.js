@@ -41,10 +41,7 @@ class LoginScreen extends AppScreen {
     $(SELECTORS.BUTTON_SIGN_UP).click();
     $(SELECTORS.LOGIN_SCREEN).waitForDisplayed();
   }
-  tabLogin() {
-    $(SELECTORS.LOGIN).click();
-    $(SELECTORS.LOGIN_SCREEN).waitForDisplayed();
-  }
+  
   login(email, password) {
     console.log(email);
     console.log(password);
